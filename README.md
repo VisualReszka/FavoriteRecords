@@ -17,7 +17,7 @@ The goal of this project is to:
 
 ## Structure
 
-- `contracts/`: Contains the Solidity contract for the mappings exercise.
+- `src/`: Includes the Solidity contract for the mappings exercise.
 - `test/`: Includes tests for the smart contract to verify correctness.
 
 ## Progress
