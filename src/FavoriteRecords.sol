@@ -47,8 +47,8 @@ contract FavoriteRecords {
     // Function to get user's favorite records
     function getUserFavorites(address user) public view returns (string[] memory) {
         string[] memory favorites = new string[](approvedRecordList.length);
-        uint count = 0;
-        for (uint i = 0; i < approvedRecordList.length; i++) {
+        uint256 count = 0;
+        for (uint256 i = 0; i < approvedRecordList.length; i++) {
             string memory album = approvedRecordList[i];
             if (userFavorites[user][album]) {
                 favorites[count] = album;
@@ -57,7 +57,7 @@ contract FavoriteRecords {
         }
         // Resize the array to fit the actual number of favorites
         string[] memory result = new string[](count);
-        for (uint i = 0; i < count; i++) {
+        for (uint256 i = 0; i < count; i++) {
             result[i] = favorites[i];
         }
         return result;
@@ -65,7 +65,7 @@ contract FavoriteRecords {
 
     // Function to reset user's favorites
     function resetUserFavorites() public {
-        for (uint i = 0; i < approvedRecordList.length; i++) {
+        for (uint256 i = 0; i < approvedRecordList.length; i++) {
             string memory album = approvedRecordList[i];
             if (userFavorites[msg.sender][album]) {
                 userFavorites[msg.sender][album] = false;
